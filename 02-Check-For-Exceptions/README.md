@@ -11,3 +11,4 @@ In this activity we will write a test to check if an error was thrown by a funct
 * Ensure everything works by logging the result of `assertThrows` when passed in `multiply` and any two numbers. `false` should be printed to the console, meaning no error was thrown.
 
 * Then, log the result of `assertThrows` when passed in `multiply` with any number number and any string. An error should be logged, followed by `true`, meaning an error was thrown and caught.
+

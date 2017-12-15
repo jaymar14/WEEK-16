@@ -1,8 +1,5 @@
-"use strict";
-
 // Get filename from user
 var filename = process.argv[2];
-var mockError = require("./helpers").mockError;
 var readFile = require("./helpers").readFile;
 
 // Try to read from the file system, but move on if there"s an issue.

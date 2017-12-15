@@ -1,6 +1,4 @@
-"use strict";
-
-var should = require("chai").should();
+var expect = require("chai").expect;
 
 var multiply = function(x, y) {
   if (typeof x !== "number" || typeof y !== "number") {
@@ -11,12 +9,12 @@ var multiply = function(x, y) {
 
 describe("Multiply", function() {
   it("should multiply properly when passed numbers", function() {
-    multiply(2, 4).should.equal(8);
+    expect(multiply(2, 4)).to.equal(8);
   });
 
   it("should throw when not passed numbers", function() {
-    (function() {
+    expect(function() {
       multiply(2, "4");
-    }).should.throw(Error);
+    }).to.throw(Error);
   });
 });

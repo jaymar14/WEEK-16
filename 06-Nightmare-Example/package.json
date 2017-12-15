@@ -10,6 +10,5 @@
   "license": "ISC",
   "devDependencies": {
     "nightmare": "^2.10.0"
-  },
-  "dependencies": {}
+  }
 }

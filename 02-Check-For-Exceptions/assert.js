@@ -1,36 +1,31 @@
-"use strict";
-
 var assertThrows = function(func, x, y) {
   var threw = false;
-  // Wrap func with a try/catch
-  // If an error is thrown, set threw to true
-  try{
-    func(x,y);
+
+  // Try to execute func with x, y
+  try {
+    func(x, y);
   }
-  catch(err){
+  catch (err) {
+    // If func throws set threw to false and log the error
+    // Since the error was caught, it doesn't crash our program
     threw = true;
+    console.log(err);
   }
-
-  if(!threw){
-    console.log("function did not throw.");
-  }
-  else{
-    console.log("function threw, as expected.");
-  }
-
-  // Depending on whether an error was thrown, threw is either true or false
+  // Return threw
   return threw;
 };
 
 var multiply = function(x, y) {
-  // use 'typeof' keyword to check if both x and y are numbers:
-  // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/typeof
+  // If either x or y is not a number, throw an error
   if (typeof x !== "number" || typeof y !== "number") {
-    throw "Either x or y is not a number. Please try again with numbers.";
-    // throw an error if either x or y is not a number
+    throw new Error("Either x or y is not a number. Please try again with numbers.");
   }
+  // Otherwise return the result of x * y
   else return x * y;
 };
 
-assertThrows(multiply, "a",2);
+// Throws an error
+console.log(assertThrows(multiply, "a", 2));
 
+// No error thrown below
+// assertThrows(multiply, 2, 2);
